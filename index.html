@@ -52,22 +52,36 @@
             margin: 0 auto;
             padding: 0 40px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             gap: 15px;
         }
         
         .nav-links {
-            display: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+        
+        .nav-links a:hover {
+            color: var(--link-color);
         }
         
         .nav-menu-toggle {
-            display: block;
+            display: none;
             background: none;
             border: none;
-            font-size: 1.5em;
+            font-size: 2em;
             cursor: pointer;
             color: var(--text-color);
+            padding: 0;
+            line-height: 1;
         }
         
         .nav-menu-mobile {
@@ -378,6 +392,18 @@
                 padding: 40px 20px;
             }
             
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-menu-toggle {
+                display: block;
+            }
+            
+            .nav-container {
+                justify-content: space-between;
+            }
+            
             .profile-section {
                 flex-direction: column;
                 align-items: center;
@@ -407,6 +433,15 @@
     <nav class="top-nav">
         <div class="nav-container">
             <button class="nav-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <div class="nav-links">
+                <a href="#intro"><span class="tr">Ana Sayfa</span><span class="en hidden">Home</span></a>
+                <a href="#background"><span class="tr">Eğitim</span><span class="en hidden">Education</span></a>
+                <a href="#positions"><span class="tr">İş Deneyimi</span><span class="en hidden">Experience</span></a>
+                <a href="#publications"><span class="tr">Yayınlar</span><span class="en hidden">Publications</span></a>
+                <a href="#conferences"><span class="tr">Sunumlar</span><span class="en hidden">Presentations</span></a>
+                <a href="#certificates"><span class="tr">Sertifikalar</span><span class="en hidden">Certificates</span></a>
+                <a href="#skills"><span class="tr">Beceriler</span><span class="en hidden">Skills</span></a>
+            </div>
             <div class="nav-controls">
                 <button class="dark-mode-toggle" onclick="toggleDarkMode()">
                     <span class="tr">🌙</span>
