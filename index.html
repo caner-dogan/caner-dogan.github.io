@@ -40,7 +40,7 @@
         .top-nav {
             background: var(--nav-bg);
             border-bottom: 1px solid var(--border-color);
-            padding: 15px 0;
+            padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -52,26 +52,68 @@
             margin: 0 auto;
             padding: 0 40px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-            flex-wrap: wrap;
             gap: 15px;
         }
         
         .nav-links {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            display: none;
         }
         
-        .nav-links a {
+        .nav-menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        .nav-menu-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        
+        .nav-menu-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            max-width: 300px;
+            height: 100%;
+            background: var(--bg-color);
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .nav-menu-content a {
+            display: block;
+            padding: 15px 10px;
             color: var(--text-color);
             text-decoration: none;
-            font-size: 0.95em;
+            border-bottom: 1px solid var(--border-color);
         }
         
-        .nav-links a:hover {
-            color: var(--link-color);
+        .nav-menu-content a:hover {
+            background: var(--nav-bg);
+        }
+        
+        .nav-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: var(--text-color);
         }
         
         .nav-controls {
@@ -119,6 +161,46 @@
             border-radius: 8px;
             object-fit: cover;
             flex-shrink: 0;
+        }
+        
+        .email-contact {
+            margin-top: 15px;
+            font-size: 1em;
+            color: var(--secondary-text);
+        }
+        
+        .email-contact a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        .email-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-to-top-fixed {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--nav-bg);
+            color: var(--text-color);
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .back-to-top-fixed:hover {
+            background: var(--border-color);
+            transform: translateY(-2px);
+        }
+        
+        .back-to-top-fixed.show {
+            display: block;
         }
         
         .profile-text h1 {
@@ -303,7 +385,8 @@
             }
             
             .profile-img {
-                width: 200px;
+                width: 100%;
+                max-width: 400px;
             }
             
             .profile-text h1 {
@@ -312,11 +395,6 @@
             
             .contact-links {
                 justify-content: center;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
             }
         }
         
@@ -328,19 +406,11 @@
 <body>
     <nav class="top-nav">
         <div class="nav-container">
-            <div class="nav-links">
-                <a href="#intro"><span class="tr">Ana Sayfa</span><span class="en hidden">Home</span></a>
-                <a href="#background"><span class="tr">Eğitim</span><span class="en hidden">Education</span></a>
-                <a href="#positions"><span class="tr">İş Deneyimi</span><span class="en hidden">Experience</span></a>
-                <a href="#publications"><span class="tr">Yayınlar</span><span class="en hidden">Publications</span></a>
-                <a href="#conferences"><span class="tr">Sunumlar</span><span class="en hidden">Presentations</span></a>
-                <a href="#certificates"><span class="tr">Sertifikalar</span><span class="en hidden">Certificates</span></a>
-                <a href="#skills"><span class="tr">Beceriler</span><span class="en hidden">Skills</span></a>
-            </div>
+            <button class="nav-menu-toggle" onclick="toggleMobileMenu()">☰</button>
             <div class="nav-controls">
                 <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-                    <span class="tr">🌙 Karanlık Mod</span>
-                    <span class="en hidden">🌙 Dark Mode</span>
+                    <span class="tr">🌙</span>
+                    <span class="en hidden">🌙</span>
                 </button>
                 <button class="lang-switch" onclick="toggleLanguage()">
                     <span id="lang-btn">EN</span>
@@ -348,6 +418,19 @@
             </div>
         </div>
     </nav>
+    
+    <div class="nav-menu-mobile" id="mobileMenu" onclick="closeMobileMenu(event)">
+        <div class="nav-menu-content" onclick="event.stopPropagation()">
+            <button class="nav-close" onclick="closeMobileMenu()">×</button>
+            <a href="#intro" onclick="closeMobileMenu()"><span class="tr">Ana Sayfa</span><span class="en hidden">Home</span></a>
+            <a href="#background" onclick="closeMobileMenu()"><span class="tr">Eğitim</span><span class="en hidden">Education</span></a>
+            <a href="#positions" onclick="closeMobileMenu()"><span class="tr">İş Deneyimi</span><span class="en hidden">Experience</span></a>
+            <a href="#publications" onclick="closeMobileMenu()"><span class="tr">Yayınlar</span><span class="en hidden">Publications</span></a>
+            <a href="#conferences" onclick="closeMobileMenu()"><span class="tr">Sunumlar</span><span class="en hidden">Presentations</span></a>
+            <a href="#certificates" onclick="closeMobileMenu()"><span class="tr">Sertifikalar</span><span class="en hidden">Certificates</span></a>
+            <a href="#skills" onclick="closeMobileMenu()"><span class="tr">Beceriler</span><span class="en hidden">Skills</span></a>
+        </div>
+    </div>
     
     <div class="container">
         <header id="intro">
@@ -628,9 +711,22 @@
         </footer>
     </div>
     
+    <a href="#intro" class="back-to-top-fixed" id="backToTopBtn">
+        <span class="tr">↑ Başa Dön</span>
+        <span class="en hidden">↑ Back to Top</span>
+    </a>
+    
     <script>
         let currentLang = 'en';
         let darkMode = false;
+        
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').style.display = 'block';
+        }
+        
+        function closeMobileMenu(event) {
+            document.getElementById('mobileMenu').style.display = 'none';
+        }
         
         function copyEmail(e) {
             e.preventDefault();
@@ -702,6 +798,16 @@
                     });
                 }
             });
+        });
+        
+        // Show/hide back to top button
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
         });
     </script>
 </body>
