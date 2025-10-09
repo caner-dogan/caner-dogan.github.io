@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caner Doğan - Deaf Researcher & AI Specialist</title>
+    <title>Caner Doğan</title>
     <style>
         * {
             margin: 0;
@@ -11,65 +11,43 @@
             box-sizing: border-box;
         }
         
-        :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --dark: #2d3748;
-            --light: #f7fafc;
-            --shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            min-height: 100vh;
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 40px;
         }
         
         .lang-switch {
             position: fixed;
             top: 20px;
             right: 20px;
-            z-index: 1000;
-            background: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            box-shadow: var(--shadow);
+            background: #f0f0f0;
+            padding: 8px 16px;
+            border-radius: 4px;
             cursor: pointer;
-            font-weight: 600;
-            transition: transform 0.3s;
+            font-size: 0.9em;
+            border: 1px solid #ddd;
         }
         
         .lang-switch:hover {
-            transform: scale(1.05);
+            background: #e0e0e0;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        header {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ddd;
         }
         
-        .header {
-            background: white;
-            border-radius: 20px;
-            padding: 60px;
+        .profile-section {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
             margin-bottom: 30px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            animation: fadeInDown 0.8s ease-out;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         .profile-img {
@@ -77,239 +55,157 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--primary);
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
+            flex-shrink: 0;
         }
         
-        h1 {
-            font-size: 3em;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .profile-text h1 {
+            font-size: 2.5em;
+            font-weight: normal;
             margin-bottom: 10px;
+            color: #222;
         }
         
-        .subtitle {
-            font-size: 1.4em;
-            color: var(--secondary);
-            font-weight: 500;
-            margin-bottom: 20px;
+        .profile-text p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
         }
         
-        .social-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .contact-links {
             margin-top: 20px;
         }
         
-        .social-links a {
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
+        .contact-links a {
+            color: #0066cc;
             text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9em;
+            margin-right: 20px;
+            font-size: 0.95em;
         }
         
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
+        .contact-links a:hover {
+            text-decoration: underline;
         }
         
-        .content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
+        section {
+            margin-bottom: 50px;
         }
         
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .card h2 {
-            font-size: 2em;
-            color: var(--primary);
+        h2 {
+            font-size: 1.8em;
+            font-weight: normal;
             margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--primary);
+            color: #222;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
         }
         
-        .about-text {
-            font-size: 1.1em;
-            line-height: 1.8;
+        h3 {
+            font-size: 1.2em;
+            font-weight: normal;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        p, li {
+            font-size: 1em;
             color: #555;
-            text-align: justify;
-        }
-        
-        .experience-item, .education-item, .publication-item {
-            padding: 20px;
-            border-left: 4px solid var(--primary);
-            margin-bottom: 25px;
-            background: var(--light);
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
-        
-        .experience-item:hover, .education-item:hover, .publication-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow);
-        }
-        
-        .experience-item h3, .education-item h3 {
-            color: var(--secondary);
-            font-size: 1.3em;
-            margin-bottom: 8px;
-        }
-        
-        .experience-item .date, .education-item .date {
-            color: #666;
-            font-size: 0.9em;
-            font-style: italic;
             margin-bottom: 10px;
         }
         
-        .experience-item .company, .education-item .institution {
-            color: var(--primary);
-            font-weight: 600;
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding-left: 20px;
+            position: relative;
             margin-bottom: 8px;
         }
         
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category {
-            background: var(--light);
-            padding: 20px;
-            border-radius: 15px;
-            border-top: 4px solid var(--primary);
-        }
-        
-        .skill-category h3 {
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-        
-        .skill-category ul {
-            list-style: none;
-        }
-        
-        .skill-category li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #555;
-        }
-        
-        .skill-category li:before {
-            content: "✓";
+        ul li:before {
+            content: "•";
             position: absolute;
             left: 0;
-            color: var(--primary);
+            color: #999;
+        }
+        
+        .item {
+            margin-bottom: 30px;
+        }
+        
+        .item-title {
             font-weight: bold;
+            color: #333;
         }
         
-        .publications-list {
-            counter-reset: publication-counter;
+        .item-subtitle {
+            font-style: italic;
+            color: #666;
+            font-size: 0.95em;
         }
         
-        .publication-item {
-            counter-increment: publication-counter;
+        .item-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        .pub-list {
+            counter-reset: pub-counter;
+        }
+        
+        .pub-item {
+            counter-increment: pub-counter;
+            margin-bottom: 20px;
+            padding-left: 40px;
             position: relative;
-            padding-left: 50px;
         }
         
-        .publication-item:before {
-            content: counter(publication-counter);
+        .pub-item:before {
+            content: "[" counter(pub-counter) "]";
             position: absolute;
-            left: 15px;
-            top: 20px;
-            background: var(--primary);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            left: 0;
+            color: #999;
             font-weight: bold;
-        }
-        
-        .publication-item p {
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        .awards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .award-item {
-            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-        
-        .award-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .award-item h3 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
         }
         
         footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
             text-align: center;
-            padding: 40px 20px;
-            color: white;
+            font-size: 0.9em;
+            color: #999;
+        }
+        
+        a {
+            color: #0066cc;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-to-top {
+            text-align: right;
+            margin-top: 20px;
+        }
+        
+        .back-to-top a {
+            color: #999;
+            text-decoration: none;
             font-size: 0.9em;
         }
         
         @media (max-width: 768px) {
-            .header {
-                padding: 30px 20px;
+            body {
+                padding: 40px 20px;
             }
             
-            h1 {
-                font-size: 2em;
-            }
-            
-            .subtitle {
-                font-size: 1.1em;
-            }
-            
-            .card {
-                padding: 25px;
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
             
             .profile-img {
@@ -317,8 +213,18 @@
                 height: 150px;
             }
             
-            .skills {
-                grid-template-columns: 1fr;
+            .profile-text h1 {
+                font-size: 2em;
+            }
+            
+            .contact-links {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .contact-links a {
+                margin-right: 0;
             }
         }
         
@@ -329,179 +235,169 @@
 </head>
 <body>
     <div class="lang-switch" onclick="toggleLanguage()">
-        <span id="lang-btn">🌐 EN</span>
+        <span id="lang-btn">EN</span>
     </div>
     
-    <div class="container">
-        <div class="header">
+    <header>
+        <div class="profile-section">
             <img src="Caner Dogan.jpg" alt="Caner Doğan" class="profile-img">
-            <h1>Caner Doğan</h1>
-            <div class="subtitle">
-                <span class="tr">Sağır Araştırmacı | Yapay Zeka & İşaret Dili Uzmanı</span>
-                <span class="en hidden">Deaf Researcher | AI & Sign Language Specialist</span>
-            </div>
-            <div class="social-links">
-                <a href="mailto:doganc@metu.edu.tr">✉️ Email</a>
-                <a href="https://github.com/caner-dogan" target="_blank">💻 GitHub</a>
-                <a href="https://tr.linkedin.com/in/canerdo%C4%9Fan-7023324b" target="_blank">💼 LinkedIn</a>
-                <a href="https://wa.me/905558304822" target="_blank">📱 WhatsApp</a>
-            </div>
-        </div>
-        
-        <div class="content">
-            <div class="card">
-                <h2><span class="tr">Hakkımda</span><span class="en hidden">About Me</span></h2>
-                <p class="about-text">
-                    <span class="tr">Ana dili Türk İşaret Dili olan Sağır araştırmacıdır. Mühendislik lisans derecesine ve İstatistik (Yapay Zeka) ile Türk İşaret Dili Tercümanlığı alanlarında yüksek lisans derecelerine sahiptir. TRT'de 13 yıldır başmühendis olarak görev yapmakta olup, 2025'ten itibaren ODTÜ'de işaret dili kinematik analizi, dilbilimsel analizi ve yapay zeka/derin öğrenme kullanarak işaret dili tanıma sistemleri geliştirmektedir. Araştırma çalışmalarının önemli bir boyutu olarak, Türk İşaret Dili'nin kinematik analizine odaklanmaktadır.</span>
-                    <span class="en hidden">A Deaf researcher whose native language is Turkish Sign Language. He holds a bachelor's degree in Engineering and master's degrees in Statistics (Artificial Intelligence) and Turkish Sign Language Interpreting. He has been working as a chief engineer at TRT for 13 years and has been working at METU as a researcher since 2025, focusing on sign language kinematic analysis, linguistic analysis, and developing sign language recognition systems using artificial intelligence and deep learning.</span>
+            <div class="profile-text">
+                <h1>Caner Doğan</h1>
+                <p>
+                    <span class="tr">Sağır araştırmacı, <a href="https://www.metu.edu.tr" target="_blank">Orta Doğu Teknik Üniversitesi (ODTÜ)</a>, Türkiye.</span>
+                    <span class="en hidden">Deaf researcher at <a href="https://www.metu.edu.tr" target="_blank">Middle East Technical University (METU)</a>, Turkey.</span>
                 </p>
-            </div>
-            
-            <div class="card">
-                <h2><span class="tr">İş Deneyimi</span><span class="en hidden">Experience</span></h2>
-                <div class="experience-item">
-                    <h3><span class="tr">Araştırmacı</span><span class="en hidden">Researcher</span></h3>
-                    <div class="company">ODTÜ - Middle East Technical University</div>
-                    <div class="date"><span class="tr">Nisan 2025 - Devam Ediyor</span><span class="en hidden">April 2025 - Present</span></div>
-                    <p><span class="tr">İşaret dili kinematik analizi ve yapay zeka ile işaret dili tanıma sistemleri üzerine araştırmalar. TİD-LEX projesinde görev almaktadır.</span><span class="en hidden">Research on sign language kinematic analysis and AI-based sign language recognition systems. Working on the TİD-LEX project.</span></p>
-                </div>
-                <div class="experience-item">
-                    <h3><span class="tr">Başmühendis</span><span class="en hidden">Chief Engineer</span></h3>
-                    <div class="company">TRT - Turkish Radio and Television Corporation</div>
-                    <div class="date"><span class="tr">Eylül 2012 - Devam Ediyor</span><span class="en hidden">September 2012 - Present</span></div>
-                    <p><span class="tr">Teknik operasyonlar ve yayıncılık sistemleri yönetimi. Engelsiz medya erişimi projelerinde aktif rol.</span><span class="en hidden">Technical operations and broadcasting systems management. Active role in accessible media projects.</span></p>
-                </div>
-                <div class="experience-item">
-                    <h3><span class="tr">Kontrol Mühendisi</span><span class="en hidden">Control Engineer</span></h3>
-                    <div class="company">Başkentgaz</div>
-                    <div class="date"><span class="tr">Aralık 2010 - Eylül 2012</span><span class="en hidden">December 2010 - September 2012</span></div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2><span class="tr">Eğitim</span><span class="en hidden">Education</span></h2>
-                <div class="education-item">
-                    <h3><span class="tr">Yüksek Lisans - İstatistik (Yapay Zeka)</span><span class="en hidden">Master's - Statistics (Artificial Intelligence)</span></h3>
-                    <div class="institution">Ankara Üniversitesi / Ankara University</div>
-                    <div class="date">2021 - 2024</div>
-                    <p><span class="tr">Tez: İşaret Dili Tanıma İçin Derin Öğrenme ile İstatistiksel Yöntemlerin Karşılaştırılması</span><span class="en hidden">Thesis: Comparison of Deep Learning and Statistical Methods for Sign Language Recognition</span></p>
-                </div>
-                <div class="education-item">
-                    <h3><span class="tr">Yüksek Lisans - Türk İşaret Dili Tercümanlığı</span><span class="en hidden">Master's - Turkish Sign Language Interpreting</span></h3>
-                    <div class="institution">Ankara Üniversitesi / Ankara University</div>
-                    <div class="date">2019 - 2020</div>
-                    <p><span class="tr">Proje: Televizyon Haber Bültenlerinde İşaret Dili Çeviri Hizmetine Yönelik Sağır Topluluğun Tutum ve Beklentileri</span><span class="en hidden">Project: Attitudes and Expectations of the Deaf Community Regarding Sign Language Interpretation in TV News</span></p>
-                </div>
-                <div class="education-item">
-                    <h3><span class="tr">Lisans - Makine Mühendisliği</span><span class="en hidden">Bachelor's - Mechanical Engineering</span></h3>
-                    <div class="institution">Eskişehir Osmangazi Üniversitesi / Eskisehir Osmangazi University</div>
-                    <div class="date">2005 - 2009</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2><span class="tr">Uzmanlık Alanları</span><span class="en hidden">Expertise</span></h2>
-                <div class="skills">
-                    <div class="skill-category">
-                        <h3><span class="tr">Yapay Zeka & Programlama</span><span class="en hidden">AI & Programming</span></h3>
-                        <ul>
-                            <li>Python</li>
-                            <li><span class="tr">Makine Öğrenmesi</span><span class="en hidden">Machine Learning</span></li>
-                            <li><span class="tr">Derin Öğrenme</span><span class="en hidden">Deep Learning</span></li>
-                            <li><span class="tr">İstatistiksel Analiz</span><span class="en hidden">Statistical Analysis</span></li>
-                            <li><span class="tr">Veri Analizi & Görselleştirme</span><span class="en hidden">Data Analysis & Visualization</span></li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3><span class="tr">İşaret Dili</span><span class="en hidden">Sign Language</span></h3>
-                        <ul>
-                            <li><span class="tr">Türk İşaret Dili (Ana Dil)</span><span class="en hidden">Turkish Sign Language (Native)</span></li>
-                            <li><span class="tr">İşaret Dili Tercümanlığı</span><span class="en hidden">Sign Language Interpreting</span></li>
-                            <li><span class="tr">Dilbilim & Çeviribilim</span><span class="en hidden">Linguistics & Translation Studies</span></li>
-                            <li><span class="tr">Kinematik Analiz</span><span class="en hidden">Kinematic Analysis</span></li>
-                            <li>ELAN 6,7</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3><span class="tr">Diğer</span><span class="en hidden">Other</span></h3>
-                        <ul>
-                            <li>AutoCAD</li>
-                            <li><span class="tr">Teknik Yönetim</span><span class="en hidden">Technical Management</span></li>
-                            <li><span class="tr">Proje Yönetimi</span><span class="en hidden">Project Management</span></li>
-                            <li><span class="tr">Mentörlük & Eğitim</span><span class="en hidden">Mentorship & Training</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2><span class="tr">Seçilmiş Yayınlar & Konferanslar</span><span class="en hidden">Selected Publications & Conferences</span></h2>
-                <div class="publications-list">
-                    <div class="publication-item">
-                        <p><strong>SLTAT 2025</strong> - Sign Language Technology and Applications Conference</p>
-                        <p>Berlin, <span class="tr">Almanya | Eylül 2025</span><span class="en hidden">Germany | September 2025</span></p>
-                        <p><span class="tr">Poster Sunumu: İşaret Dili Tanımada Derin Öğrenme ile İstatistiksel Yöntemlerin Karşılaştırılması</span><span class="en hidden">Poster: Comparison of Deep Learning and Statistical Methods for Sign Language Recognition</span></p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>ISGS 10</strong> - International Society for Gesture Studies</p>
-                        <p>Nijmegen, <span class="tr">Hollanda | Temmuz 2025</span><span class="en hidden">Netherlands | July 2025</span></p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong>CVPR 2025</strong> - <span class="tr">İşaret Dili Teknolojileri Çalıştayı</span><span class="en hidden">Sign Language Technologies Workshop</span></p>
-                        <p>Nashville, <span class="tr">ABD | Haziran 2025</span><span class="en hidden">USA | June 2025</span></p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong><span class="tr">Doktora Tezi</span><span class="en hidden">Doctoral Thesis</span></strong> (2024)</p>
-                        <p>Doğan, C. (2024). <span class="tr">İşaret dili tanımada derin öğrenme ile istatistiksel yöntemlerin karşılaştırılması. Ankara Üniversitesi.</span><span class="en hidden">Comparison of deep learning and statistical methods in sign language recognition. Ankara University.</span></p>
-                    </div>
-                    <div class="publication-item">
-                        <p><strong><span class="tr">Akademik Makale</span><span class="en hidden">Academic Article</span></strong> (2021)</p>
-                        <p>Doğan, C. (2021). <span class="tr">Televizyon Haber Bültenlerindeki İşaret Dili Çeviri Hizmetine Yönelik Sağır Topluluğun Tutum Ve Beklentileri.</span><span class="en hidden">Attitudes and Expectations of the Deaf Community Regarding Sign Language Interpretation Services in Television News Bulletins.</span> Çeviribilim ve Uygulamaları Dergisi, 2021(30), 18-60.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2><span class="tr">Ödüller & Başarılar</span><span class="en hidden">Awards & Achievements</span></h2>
-                <div class="awards">
-                    <div class="award-item">
-                        <h3>🏆 <span class="tr">Engelsiz Başarı Ödülü</span><span class="en hidden">Barrier-Free Success Award</span></h3>
-                        <p><span class="tr">Aile ve Sosyal Hizmetler Bakanlığı</span><span class="en hidden">Ministry of Family and Social Services</span></p>
-                        <p>2019</p>
-                    </div>
-                    <div class="award-item">
-                        <h3>🏆 <span class="tr">Yapay Zeka Uzmanlık Programı</span><span class="en hidden">AI Specialization Program</span></h3>
-                        <p><span class="tr">500 kişi arasında seçildi</span><span class="en hidden">Selected among 500 people</span></p>
-                        <p><span class="tr">Milli Teknoloji Akademisi</span><span class="en hidden">National Technology Academy</span> - 2024</p>
-                    </div>
-                    <div class="award-item">
-                        <h3>🏆 <span class="tr">Engelsiz Bilişim Ödülü</span><span class="en hidden">Accessible IT Award</span></h3>
-                        <p><span class="tr">Kodlama Eğitimi Kategorisi</span><span class="en hidden">Coding Education Category</span></p>
-                        <p>Anatolian Eternals Robotics - 2022</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2><span class="tr">Gönüllü Çalışmalar</span><span class="en hidden">Volunteer Work</span></h2>
-                <div class="experience-item">
-                    <h3>Mentör / Koç</h3>
-                    <div class="company">FRC - Anatolian Deaf Eternals Robotics - 8863</div>
-                    <div class="date"><span class="tr">Şubat 2022 - Devam Ediyor</span><span class="en hidden">February 2022 - Present</span></div>
-                    <p><span class="tr">Sağır lise öğrencilerine robot tasarımı ve programlama eğitimi</span><span class="en hidden">Robot design and programming education for Deaf high school students</span></p>
-                </div>
-                <div class="experience-item">
-                    <h3><span class="tr">Genel Sekreter</span><span class="en hidden">General Secretary</span></h3>
-                    <div class="company"><span class="tr">Ankara Anadolu Sağırlar Spor Kulübü</span><span class="en hidden">Ankara Anatolian Deaf Sports Club</span></div>
-                    <div class="date"><span class="tr">Ocak 2018 - Kasım 2024</span><span class="en hidden">January 2018 - November 2024</span></div>
+                <div class="contact-links">
+                    <a href="mailto:doganc@metu.edu.tr">Email</a>
+                    <a href="https://github.com/caner-dogan" target="_blank">GitHub</a>
+                    <a href="https://tr.linkedin.com/in/canerdo%C4%9Fan-7023324b" target="_blank">LinkedIn</a>
                 </div>
             </div>
         </div>
+    </header>
+    
+    <main>
+        <section id="intro">
+            <h2><span class="tr">Giriş</span><span class="en hidden">Intro</span></h2>
+            <p>
+                <span class="tr">Ana dilim <strong>Türk İşaret Dili</strong>dir. ODTÜ'de yapay zeka ve derin öğrenme kullanarak işaret dili tanıma sistemleri üzerine araştırmalar yapıyorum. Ayrıca <a href="https://www.trt.net.tr" target="_blank">TRT Genel Müdürlüğü</a>'nde başmühendis olarak görev yapmaktayım.</span>
+                <span class="en hidden">My native language is <strong>Turkish Sign Language</strong>. I conduct research on sign language recognition systems using artificial intelligence and deep learning at METU. I also work as chief engineer at <a href="https://www.trt.net.tr" target="_blank">Turkish Radio and Television Corporation (TRT)</a>.</span>
+            </p>
+        </section>
         
-        <footer>
-            <p>&copy; 2025 Caner Doğan. <span class="tr">Tüm hakları saklıdır.</span><span class="en hidden">All rights reserved.</span></p>
-        </footer>
-    </div>
+        <section id="background">
+            <h2><span class="tr">Geçmiş</span><span class="en hidden">Background</span></h2>
+            <p>
+                <span class="tr">Eskişehir Osmangazi Üniversitesi'nden Makine Mühendisliği lisans derecesi, Ankara Üniversitesi'nden Türk İşaret Dili Tercümanlığı ve İstatistik (Yapay Zeka) alanlarında yüksek lisans derecelerine sahibim.</span>
+                <span class="en hidden">I hold a BA degree in Mechanical Engineering from Eskişehir Osmangazi University and MA degrees in Turkish Sign Language Interpreting and Statistics (Artificial Intelligence) from Ankara University.</span>
+            </p>
+            <p>
+                <span class="tr">2024 yılında tamamladığım yüksek lisans tezim <em>"İşaret Dili Tanıma İçin Derin Öğrenme ile İstatistiksel Yöntemlerin Karşılaştırılması"</em> üzerineydi.</span>
+                <span class="en hidden">My MA thesis completed in 2024 focused on <em>"Comparison of Deep Learning and Statistical Methods for Sign Language Recognition"</em>.</span>
+            </p>
+            <div class="back-to-top">
+                <a href="#top">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
+            </div>
+        </section>
+        
+        <section id="research">
+            <h2><span class="tr">Araştırma İlgi Alanları</span><span class="en hidden">Research Interests</span></h2>
+            <p><span class="tr">Araştırma ilgi alanlarım şunları içerir:</span><span class="en hidden">My research interests include:</span></p>
+            <ul>
+                <li><span class="tr">işaret dilleri</span><span class="en hidden">sign languages</span></li>
+                <li><span class="tr">işaret dili kinematik analizi</span><span class="en hidden">sign language kinematic analysis</span></li>
+                <li><span class="tr">dilbilim ve çeviribilim</span><span class="en hidden">linguistics and translation studies</span></li>
+                <li><span class="tr">yapay zeka ve derin öğrenme</span><span class="en hidden">artificial intelligence and deep learning</span></li>
+                <li><span class="tr">işaret dili tanıma sistemleri</span><span class="en hidden">sign language recognition systems</span></li>
+                <li><span class="tr">nicel yöntemler ve veri görselleştirme</span><span class="en hidden">quantitative methods and data visualization</span></li>
+            </ul>
+            <p>
+                <span class="tr">Ayrıca Python ve R kullanarak programlama yapmakta ve çeşitli işaret dili uygulamaları geliştirmekteyim.</span>
+                <span class="en hidden">I also do programming using Python and R, developing various sign language applications.</span>
+            </p>
+            <div class="back-to-top">
+                <a href="#top">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
+            </div>
+        </section>
+        
+        <section id="positions">
+            <h2><span class="tr">Görevler</span><span class="en hidden">Positions</span></h2>
+            
+            <div class="item">
+                <div class="item-title"><span class="tr">Araştırmacı</span><span class="en hidden">Researcher</span></div>
+                <div class="item-subtitle">
+                    <span class="tr">Orta Doğu Teknik Üniversitesi (ODTÜ)</span>
+                    <span class="en hidden">Middle East Technical University (METU)</span>
+                </div>
+                <div class="item-date">2025–<span class="tr">devam ediyor</span><span class="en hidden">present</span></div>
+                <p><span class="tr">TİD-LEX (Türk İşaret Dili Sözcük Veritabanı) projesinde görev almaktayım.</span><span class="en hidden">Working on the TİD-LEX (Turkish Sign Language Lexical Database) project.</span></p>
+            </div>
+            
+            <div class="item">
+                <div class="item-title"><span class="tr">Başmühendis</span><span class="en hidden">Chief Engineer</span></div>
+                <div class="item-subtitle">
+                    <span class="tr">TRT Genel Müdürlüğü</span>
+                    <span class="en hidden">Turkish Radio and Television Corporation</span>
+                </div>
+                <div class="item-date">2012–<span class="tr">devam ediyor</span><span class="en hidden">present</span></div>
+            </div>
+            
+            <div class="back-to-top">
+                <a href="#top">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
+            </div>
+        </section>
+        
+        <section id="publications">
+            <h2><span class="tr">Seçilmiş Yayınlar</span><span class="en hidden">Selected Publications</span></h2>
+            
+            <div class="pub-list">
+                <div class="pub-item">
+                    Doğan, C. (2024). <em><span class="tr">İşaret dili tanımada derin öğrenme ile istatistiksel yöntemlerin karşılaştırılması</span><span class="en hidden">Comparison of deep learning and statistical methods in sign language recognition</span></em> [<span class="tr">Yüksek lisans tezi</span><span class="en hidden">MA thesis</span>, <span class="tr">Ankara Üniversitesi</span><span class="en hidden">Ankara University</span>]. <a href="https://tez.yok.gov.tr" target="_blank">Ulusal Tez Merkezi</a>.
+                </div>
+                
+                <div class="pub-item">
+                    Doğan, C. (2021). <span class="tr">Televizyon Haber Bültenlerindeki İşaret Dili Çeviri Hizmetine Yönelik Sağır Topluluğun Tutum Ve Beklentileri.</span><span class="en hidden">Attitudes and Expectations of the Deaf Community Regarding Sign Language Interpretation Services in Television News Bulletins.</span> <em>Çeviribilim ve Uygulamaları Dergisi</em>, 2021(30), 18-60.
+                </div>
+            </div>
+            
+            <div class="back-to-top">
+                <a href="#top">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
+            </div>
+        </section>
+        
+        <section id="conferences">
+            <h2><span class="tr">Konferanslar & Sunumlar</span><span class="en hidden">Conferences & Presentations</span></h2>
+            
+            <h3>2025</h3>
+            <ul>
+                <li>SLTAT 2025 – Sign Language Technology and Applications Conference, Berlin, <span class="tr">Almanya</span><span class="en hidden">Germany</span></li>
+                <li>ISGS 10 – International Society for Gesture Studies, Nijmegen, <span class="tr">Hollanda</span><span class="en hidden">Netherlands</span></li>
+                <li>CVPR 2025 – <span class="tr">İşaret Dili Teknolojileri Çalıştayı</span><span class="en hidden">Sign Language Technologies Workshop</span>, Nashville, USA</li>
+                <li>AT4SSL 2025 – <span class="tr">İşaret ve Konuşma Dilleri için Otomatik Çeviri Çalıştayı</span><span class="en hidden">Automatic Translation for Sign and Spoken Languages Workshop</span>, Geneva, <span class="tr">İsviçre</span><span class="en hidden">Switzerland</span></li>
+            </ul>
+            
+            <h3>2024</h3>
+            <ul>
+                <li>IMPRS <span class="tr">Konferansı</span><span class="en hidden">Conference</span> – <span class="tr">Dil Bilimlerinde Disiplinlerarası Yaklaşımlar</span><span class="en hidden">Interdisciplinary Approaches in Language Sciences</span>, Max Planck Institute, Nijmegen, <span class="tr">Hollanda</span><span class="en hidden">Netherlands</span></li>
+            </ul>
+            
+            <div class="back-to-top">
+                <a href="#top">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
+            </div>
+        </section>
+        
+        <section id="awards">
+            <h2><span class="tr">Ödüller</span><span class="en hidden">Awards</span></h2>
+            <ul>
+                <li><span class="tr">Yapay Zeka Uzmanlık Programı (500 kişi arasında seçildi) – Milli Teknoloji Akademisi, 2024</span><span class="en hidden">AI Specialization Program (selected among 500 applicants) – National Technology Academy, 2024</span></li>
+                <li><span class="tr">Engelsiz Bilişim Ödülü (Kodlama Eğitimi) – Anatolian Eternals Robotics, 2022</span><span class="en hidden">Accessible IT Award (Coding Education) – Anatolian Eternals Robotics, 2022</span></li>
+                <li><span class="tr">Engelsiz Başarı Ödülü – Aile ve Sosyal Hizmetler Bakanlığı, 2019</span><span class="en hidden">Barrier-Free Success Award – Ministry of Family and Social Services, 2019</span></li>
+            </ul>
+            
+            <div class="back-to-top">
+                <a href="#top">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
+            </div>
+        </section>
+        
+        <section id="teaching">
+            <h2><span class="tr">Gönüllü Çalışmalar</span><span class="en hidden">Volunteer Work</span></h2>
+            
+            <div class="item">
+                <div class="item-title">Mentör / Koç</div>
+                <div class="item-subtitle">FRC – Anatolian Deaf Eternals Robotics (8863)</div>
+                <div class="item-date">2022–<span class="tr">devam ediyor</span><span class="en hidden">present</span></div>
+                <p><span class="tr">Sağır lise öğrencilerine robot tasarımı ve programlama eğitimi vermekteyim.</span><span class="en hidden">Providing robot design and programming education to Deaf high school students.</span></p>
+            </div>
+            
+            <div class="back-to-top">
+                <a href="#top">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Caner Doğan</p>
+    </footer>
     
     <script>
         let currentLang = 'tr';
@@ -509,7 +405,7 @@
         function toggleLanguage() {
             currentLang = currentLang === 'tr' ? 'en' : 'tr';
             const langBtn = document.getElementById('lang-btn');
-            langBtn.textContent = currentLang === 'tr' ? '🌐 EN' : '🌐 TR';
+            langBtn.textContent = currentLang === 'tr' ? 'EN' : 'TR';
             
             document.querySelectorAll('.tr').forEach(el => {
                 el.classList.toggle('hidden', currentLang !== 'tr');
