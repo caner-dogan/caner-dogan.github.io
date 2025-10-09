@@ -17,11 +17,7 @@
             --secondary-text: #555;
             --border-color: #ddd;
             --link-color: #0066cc;
-            --nav-bg: #f8f8f8;
-        }
-        
-        html {
-            scroll-behavior: smooth;
+            --nav-bg: #e8e8e8;
         }
         
         body.dark-mode {
@@ -139,20 +135,28 @@
         }
         
         .contact-links {
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
         }
         
         .contact-links a {
-            color: var(--link-color);
+            color: var(--bg-color);
+            background: var(--link-color);
             text-decoration: none;
-            font-size: 0.95em;
+            font-size: 0.9em;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-align: center;
+            transition: all 0.3s;
+            display: block;
         }
         
         .contact-links a:hover {
-            text-decoration: underline;
+            background: var(--text-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         section {
@@ -364,7 +368,7 @@
                         <a href="https://github.com/caner-dogan" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/caner-do%C4%9Fan-7023324b/" target="_blank">LinkedIn</a>
                         <a href="https://orcid.org/0000-0003-0195-0932" target="_blank">ORCID</a>
-                        <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+                        <a href="https://scholar.google.com/citations?user=magnPpkAAAAJ&hl=tr&oi=sra" target="_blank">Google Scholar</a>
                         <a href="https://www.instagram.com/sagirmuhendis/" target="_blank">Instagram</a>
                         <a href="https://x.com/dogan_caner" target="_blank">Twitter/X</a>
                         <a href="https://www.facebook.com/dogan.caner14" target="_blank">Facebook</a>
@@ -624,7 +628,7 @@
     </div>
     
     <script>
-        let currentLang = 'tr';
+        let currentLang = 'en';
         let darkMode = false;
         
         function toggleLanguage() {
@@ -649,13 +653,23 @@
             localStorage.setItem('darkMode', darkMode);
         }
         
-        // Load dark mode preference
+        // Load dark mode preference and set initial language
         window.addEventListener('DOMContentLoaded', () => {
             const savedDarkMode = localStorage.getItem('darkMode') === 'true';
             if (savedDarkMode) {
                 darkMode = true;
                 document.body.classList.add('dark-mode');
             }
+            
+            // Set initial language to English
+            document.getElementById('lang-btn').textContent = 'TR';
+            document.querySelectorAll('.tr').forEach(el => {
+                el.classList.add('hidden');
+            });
+            document.querySelectorAll('.en').forEach(el => {
+                el.classList.remove('hidden');
+            });
+            document.documentElement.lang = 'en';
         });
         
         // Smooth scrolling for anchor links
