@@ -142,8 +142,8 @@
         }
         
         .contact-links a {
-            color: var(--bg-color);
-            background: var(--link-color);
+            color: var(--text-color);
+            background: var(--nav-bg);
             text-decoration: none;
             font-size: 0.9em;
             padding: 10px 16px;
@@ -151,10 +151,11 @@
             text-align: center;
             transition: all 0.3s;
             display: block;
+            border: 1px solid var(--border-color);
         }
         
         .contact-links a:hover {
-            background: var(--text-color);
+            background: var(--border-color);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
@@ -630,6 +631,23 @@
     <script>
         let currentLang = 'en';
         let darkMode = false;
+        
+        function copyEmail(e) {
+            e.preventDefault();
+            const email = 'doganc@metu.edu.tr';
+            navigator.clipboard.writeText(email).then(() => {
+                alert('Email copied: ' + email);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = email;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('Email copied: ' + email);
+            });
+        }
         
         function toggleLanguage() {
             currentLang = currentLang === 'tr' ? 'en' : 'tr';
