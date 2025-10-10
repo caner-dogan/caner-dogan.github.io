@@ -440,7 +440,7 @@
         }
         
         .hidden {
-            display: none;
+            display: none !important;
         }
     </style>
 </head>
@@ -449,18 +449,18 @@
         <div class="nav-container">
             <button class="nav-menu-toggle" onclick="toggleMobileMenu()">☰</button>
             <div class="nav-links">
-                <a href="#intro"><span class="tr">Ana Sayfa</span><span class="en hidden">Home</span></a>
-                <a href="#background"><span class="tr">Eğitim</span><span class="en hidden">Education</span></a>
-                <a href="#positions"><span class="tr">İş Deneyimi</span><span class="en hidden">Experience</span></a>
-                <a href="#publications"><span class="tr">Yayınlar</span><span class="en hidden">Publications</span></a>
-                <a href="#conferences"><span class="tr">Sunumlar</span><span class="en hidden">Presentations</span></a>
-                <a href="#certificates"><span class="tr">Sertifikalar</span><span class="en hidden">Certificates</span></a>
-                <a href="#skills"><span class="tr">Beceriler</span><span class="en hidden">Skills</span></a>
+                <a href="#intro"><span class="tr hidden">Ana Sayfa</span><span class="en">Home</span></a>
+                <a href="#background"><span class="tr hidden">Eğitim</span><span class="en">Education</span></a>
+                <a href="#positions"><span class="tr hidden">İş Deneyimi</span><span class="en">Experience</span></a>
+                <a href="#publications"><span class="tr hidden">Yayınlar</span><span class="en">Publications</span></a>
+                <a href="#conferences"><span class="tr hidden">Sunumlar</span><span class="en">Presentations</span></a>
+                <a href="#certificates"><span class="tr hidden">Sertifikalar</span><span class="en">Certificates</span></a>
+                <a href="#skills"><span class="tr hidden">Beceriler</span><span class="en">Skills</span></a>
             </div>
             <div class="nav-controls">
                 <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-                    <span class="tr">🌙</span>
-                    <span class="en hidden">🌙</span>
+                    <span class="tr hidden">🌙</span>
+                    <span class="en">🌙</span>
                 </button>
                 <button class="lang-switch" onclick="toggleLanguage()">
                     <span id="lang-btn">TR</span>
@@ -472,13 +472,13 @@
     <div class="nav-menu-mobile" id="mobileMenu" onclick="closeMobileMenu(event)">
         <div class="nav-menu-content" onclick="event.stopPropagation()">
             <button class="nav-close" onclick="closeMobileMenu()">×</button>
-            <a href="#intro" onclick="closeMobileMenu()"><span class="tr">Ana Sayfa</span><span class="en hidden">Home</span></a>
-            <a href="#background" onclick="closeMobileMenu()"><span class="tr">Eğitim</span><span class="en hidden">Education</span></a>
-            <a href="#positions" onclick="closeMobileMenu()"><span class="tr">İş Deneyimi</span><span class="en hidden">Experience</span></a>
-            <a href="#publications" onclick="closeMobileMenu()"><span class="tr">Yayınlar</span><span class="en hidden">Publications</span></a>
-            <a href="#conferences" onclick="closeMobileMenu()"><span class="tr">Sunumlar</span><span class="en hidden">Presentations</span></a>
-            <a href="#certificates" onclick="closeMobileMenu()"><span class="tr">Sertifikalar</span><span class="en hidden">Certificates</span></a>
-            <a href="#skills" onclick="closeMobileMenu()"><span class="tr">Beceriler</span><span class="en hidden">Skills</span></a>
+            <a href="#intro" onclick="closeMobileMenu()"><span class="tr hidden">Ana Sayfa</span><span class="en">Home</span></a>
+            <a href="#background" onclick="closeMobileMenu()"><span class="tr hidden">Eğitim</span><span class="en">Education</span></a>
+            <a href="#positions" onclick="closeMobileMenu()"><span class="tr hidden">İş Deneyimi</span><span class="en">Experience</span></a>
+            <a href="#publications" onclick="closeMobileMenu()"><span class="tr hidden">Yayınlar</span><span class="en">Publications</span></a>
+            <a href="#conferences" onclick="closeMobileMenu()"><span class="tr hidden">Sunumlar</span><span class="en">Presentations</span></a>
+            <a href="#certificates" onclick="closeMobileMenu()"><span class="tr hidden">Sertifikalar</span><span class="en">Certificates</span></a>
+            <a href="#skills" onclick="closeMobileMenu()"><span class="tr hidden">Beceriler</span><span class="en">Skills</span></a>
         </div>
     </div>
     
@@ -490,26 +490,26 @@
                     <h1>Caner Doğan</h1>
                     
                     <div class="position">
-                        <span class="tr">Sağır Araştırmacı</span>
-                        <span class="en hidden">Deaf Researcher</span>
+                        <span class="tr hidden">Sağır Araştırmacı</span>
+                        <span class="en">Deaf Researcher</span>
                     </div>
                     <div class="institution">
-                        <span class="tr"><a href="https://www.metu.edu.tr" target="_blank">Orta Doğu Teknik Üniversitesi (ODTÜ)</a>, Ankara, Türkiye</span>
-                        <span class="en hidden"><a href="https://www.metu.edu.tr" target="_blank">Middle East Technical University (METU)</a>, Ankara, Turkey</span>
+                        <span class="tr hidden"><a href="https://www.metu.edu.tr" target="_blank">Orta Doğu Teknik Üniversitesi (ODTÜ)</a>, Ankara, Türkiye</span>
+                        <span class="en"><a href="https://www.metu.edu.tr" target="_blank">Middle East Technical University (METU)</a>, Ankara, Turkey</span>
                     </div>
                     
                     <div class="position">
-                        <span class="tr">Başmühendis</span>
-                        <span class="en hidden">Chief Engineer</span>
+                        <span class="tr hidden">Başmühendis</span>
+                        <span class="en">Chief Engineer</span>
                     </div>
                     <div class="institution">
-                        <span class="tr"><a href="https://www.trt.net.tr" target="_blank">TRT Genel Müdürlüğü (TRT)</a>, Ankara, Türkiye</span>
-                        <span class="en hidden"><a href="https://www.trt.net.tr" target="_blank">Turkish Radio and Television Corporation (TRT)</a>, Ankara, Turkey</span>
+                        <span class="tr hidden"><a href="https://www.trt.net.tr" target="_blank">TRT Genel Müdürlüğü (TRT)</a>, Ankara, Türkiye</span>
+                        <span class="en"><a href="https://www.trt.net.tr" target="_blank">Turkish Radio and Television Corporation (TRT)</a>, Ankara, Turkey</span>
                     </div>
                     
                     <p>
-                        <span class="tr">Ana dilim <strong>Türk İşaret Dili (TİD)</strong>'dir. Yapay zekâ ve derin öğrenme yöntemlerini kullanarak işaret dili tanıma sistemleri, işaret dili teknolojisi, dilbilimsel ve kinematik analizler ile Sağır çalışmaları alanlarında araştırmalar yapıyorum.</span>
-                        <span class="en hidden">My native language is <strong>Turkish Sign Language (TİD)</strong>. I conduct research in sign language recognition systems, sign language technology, linguistic and kinematic analyses, and Deaf studies using artificial intelligence and deep learning methods.</span>
+                        <span class="tr hidden">Ana dilim <strong>Türk İşaret Dili (TİD)</strong>'dir. Yapay zekâ ve derin öğrenme yöntemlerini kullanarak işaret dili tanıma sistemleri, işaret dili teknolojisi, dilbilimsel ve kinematik analizler ile Sağır çalışmaları alanlarında araştırmalar yapıyorum.</span>
+                        <span class="en">My native language is <strong>Turkish Sign Language (TİD)</strong>. I conduct research in sign language recognition systems, sign language technology, linguistic and kinematic analyses, and Deaf studies using artificial intelligence and deep learning methods.</span>
                     </p>
                     
                     <p class="email-contact">
