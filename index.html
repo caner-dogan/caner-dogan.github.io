@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,6 +84,26 @@
             line-height: 1;
         }
         
+        .nav-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .lang-switch, .dark-mode-toggle {
+            background: var(--bg-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+        
+        .lang-switch:hover, .dark-mode-toggle:hover {
+            opacity: 0.8;
+        }
+        
         .nav-menu-mobile {
             display: none;
             position: fixed;
@@ -130,26 +150,6 @@
             color: var(--text-color);
         }
         
-        .nav-controls {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .lang-switch, .dark-mode-toggle {
-            background: var(--bg-color);
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-        }
-        
-        .lang-switch:hover, .dark-mode-toggle:hover {
-            opacity: 0.8;
-        }
-        
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -177,6 +177,34 @@
             flex-shrink: 0;
         }
         
+        .profile-text h1 {
+            font-size: 2.5em;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .profile-text .position {
+            font-size: 1.3em;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .profile-text .institution {
+            font-size: 1em;
+            color: var(--secondary-text);
+            margin-bottom: 15px;
+        }
+        
+        .profile-text p {
+            font-size: 1.1em;
+            color: var(--secondary-text);
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+        
         .email-contact {
             margin-top: 15px;
             font-size: 1em;
@@ -190,44 +218,6 @@
         
         .email-contact a:hover {
             text-decoration: underline;
-        }
-        
-        .back-to-top-fixed {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--nav-bg);
-            color: var(--text-color);
-            padding: 12px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 100;
-            transition: all 0.3s;
-        }
-        
-        .back-to-top-fixed:hover {
-            background: var(--border-color);
-            transform: translateY(-2px);
-        }
-        
-        .back-to-top-fixed.show {
-            display: block;
-        }
-        
-        .profile-text h1 {
-            font-size: 2.5em;
-            font-weight: normal;
-            margin-bottom: 10px;
-            color: var(--text-color);
-        }
-        
-        .profile-text p {
-            font-size: 1.1em;
-            color: var(--secondary-text);
-            line-height: 1.8;
         }
         
         .contact-links {
@@ -254,6 +244,31 @@
             background: var(--border-color);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .back-to-top-fixed {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--nav-bg);
+            color: var(--text-color);
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .back-to-top-fixed:hover {
+            background: var(--border-color);
+            transform: translateY(-2px);
+        }
+        
+        .back-to-top-fixed.show {
+            display: block;
         }
         
         section {
@@ -448,7 +463,7 @@
                     <span class="en hidden">🌙</span>
                 </button>
                 <button class="lang-switch" onclick="toggleLanguage()">
-                    <span id="lang-btn">EN</span>
+                    <span id="lang-btn">TR</span>
                 </button>
             </div>
         </div>
@@ -473,27 +488,45 @@
                 <img src="Caner Dogan.jpg" alt="Caner Doğan" class="profile-img">
                 <div class="profile-text">
                     <h1>Caner Doğan</h1>
-                    <p>
-                        <span class="tr">Sağır araştırmacı, <a href="https://www.metu.edu.tr" target="_blank">Orta Doğu Teknik Üniversitesi (ODTÜ)</a>, Türkiye.</span>
-                        <span class="en hidden">Deaf researcher at <a href="https://www.metu.edu.tr" target="_blank">Middle East Technical University (METU)</a>, Turkey.</span>
-                    </p>
-                    <p>
-                        <span class="tr">Ana dilim <strong>Türk İşaret Dili</strong>dir. ODTÜ'de yapay zeka ve derin öğrenme kullanarak işaret dili tanıma sistemleri üzerine araştırmalar yapıyorum.</span>
-                        <span class="en hidden">My native language is <strong>Turkish Sign Language</strong>. I conduct research on sign language recognition systems using artificial intelligence and deep learning at METU.</span>
-                    </p>
-                    <div class="contact-links">
-                        <a href="mailto:doganc@metu.edu.tr">Email</a>
-                        <a href="https://mlcdlab-psy.metu.edu.tr/en/caner-dogan" target="_blank">METU Profile</a>
-                        <a href="https://github.com/caner-dogan" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/in/caner-do%C4%9Fan-7023324b/" target="_blank">LinkedIn</a>
-                        <a href="https://orcid.org/0000-0003-0195-0932" target="_blank">ORCID</a>
-                        <a href="https://scholar.google.com/citations?user=magnPpkAAAAJ&hl=tr&oi=sra" target="_blank">Google Scholar</a>
-                        <a href="https://www.instagram.com/sagirmuhendis/" target="_blank">Instagram</a>
-                        <a href="https://x.com/dogan_caner" target="_blank">Twitter/X</a>
-                        <a href="https://www.facebook.com/dogan.caner14" target="_blank">Facebook</a>
-                        <a href="https://bsky.app/profile/dogancaner.bsky.social" target="_blank">Bluesky</a>
+                    
+                    <div class="position">
+                        <span class="tr">Sağır Araştırmacı</span>
+                        <span class="en hidden">Deaf Researcher</span>
                     </div>
+                    <div class="institution">
+                        <span class="tr"><a href="https://www.metu.edu.tr" target="_blank">Orta Doğu Teknik Üniversitesi (ODTÜ)</a>, Ankara, Türkiye</span>
+                        <span class="en hidden"><a href="https://www.metu.edu.tr" target="_blank">Middle East Technical University (METU)</a>, Ankara, Turkey</span>
+                    </div>
+                    
+                    <div class="position">
+                        <span class="tr">Başmühendis</span>
+                        <span class="en hidden">Chief Engineer</span>
+                    </div>
+                    <div class="institution">
+                        <span class="tr"><a href="https://www.trt.net.tr" target="_blank">TRT Genel Müdürlüğü (TRT)</a>, Ankara, Türkiye</span>
+                        <span class="en hidden"><a href="https://www.trt.net.tr" target="_blank">Turkish Radio and Television Corporation (TRT)</a>, Ankara, Turkey</span>
+                    </div>
+                    
+                    <p>
+                        <span class="tr">Ana dilim <strong>Türk İşaret Dili (TİD)</strong>'dir. Yapay zekâ ve derin öğrenme yöntemlerini kullanarak işaret dili tanıma sistemleri, işaret dili teknolojisi, dilbilimsel ve kinematik analizler ile Sağır çalışmaları alanlarında araştırmalar yapıyorum.</span>
+                        <span class="en hidden">My native language is <strong>Turkish Sign Language (TİD)</strong>. I conduct research in sign language recognition systems, sign language technology, linguistic and kinematic analyses, and Deaf studies using artificial intelligence and deep learning methods.</span>
+                    </p>
+                    
+                    <p class="email-contact">
+                        <strong>Email:</strong> <a href="mailto:doganc@metu.edu.tr">doganc@metu.edu.tr</a>
+                    </p>
                 </div>
+            </div>
+            <div class="contact-links">
+                <a href="https://mlcdlab-psy.metu.edu.tr/en/caner-dogan" target="_blank">🏛️ METU</a>
+                <a href="https://github.com/caner-dogan" target="_blank">💻 GitHub</a>
+                <a href="https://www.linkedin.com/in/caner-do%C4%9Fan-7023324b/" target="_blank">💼 LinkedIn</a>
+                <a href="https://orcid.org/0000-0003-0195-0932" target="_blank">🆔 ORCID</a>
+                <a href="https://scholar.google.com/citations?user=magnPpkAAAAJ&hl=tr&oi=sra" target="_blank">🎓 Scholar</a>
+                <a href="https://www.instagram.com/sagirmuhendis/" target="_blank">📷 Instagram</a>
+                <a href="https://x.com/dogan_caner" target="_blank">🐦 Twitter</a>
+                <a href="https://www.facebook.com/dogan.caner14" target="_blank">👥 Facebook</a>
+                <a href="https://bsky.app/profile/dogancaner.bsky.social" target="_blank">🦋 Bluesky</a>
             </div>
         </header>
         
@@ -610,240 +643,4 @@
                 
                 <h3>2024</h3>
                 <ul>
-                    <li>IMPRS <span class="tr">Konferansı</span><span class="en hidden">Conference</span> – <span class="tr">Dil Bilimlerinde Disiplinlerarası Yaklaşımlar</span><span class="en hidden">Interdisciplinary Approaches in Language Sciences</span>, Max Planck Institute, Nijmegen, <span class="tr">Hollanda</span><span class="en hidden">Netherlands</span> (<span class="tr">Haziran</span><span class="en hidden">June</span>)</li>
-                </ul>
-                
-                <h3>2022</h3>
-                <ul>
-                    <li><span class="tr">Engelsiz Bilişim 2022 – "Covid-19 Pandemi Sürecinde Uzaktan Eğitime Sağır ve İşitme Engelli Üniversite Öğrencisinin Yaklaşımı" bildiri sunumu</span><span class="en hidden">Accessible IT 2022 – Presentation on "Deaf and Hard of Hearing University Students' Approach to Distance Education During the Covid-19 Pandemic"</span></li>
-                </ul>
-                
-                <h3>2021</h3>
-                <ul>
-                    <li>34. <span class="tr">Ulusal Dilbilim Kurultayı</span><span class="en hidden">National Linguistics Congress</span>, ODTÜ (<span class="tr">Nisan</span><span class="en hidden">April</span>)</li>
-                    <li>14. <span class="tr">Öğrenci Dilbilim Konferansı – "Türk İşaret Dili Sözvarlığının El Şekli Dağılımı Açısından İncelenmesi" sunumu</span><span class="en hidden">Student Linguistics Conference – Presentation on "Analysis of Turkish Sign Language Vocabulary in Terms of Handshape Distribution"</span>, Hacettepe Üniversitesi</li>
-                </ul>
-                
-                <div class="back-to-top">
-                    <a href="#intro">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
-                </div>
-            </section>
-            
-            <section id="certificates">
-                <h2><span class="tr">Sertifikalar & Ödüller</span><span class="en hidden">Certificates & Awards</span></h2>
-                
-                <h3><span class="tr">Sertifikalar</span><span class="en hidden">Certificates</span></h3>
-                <ul>
-                    <li><span class="tr">Yapay Zeka Uzmanlık Eğitimi – Milli Teknoloji Akademisi (Temmuz 2024)</span><span class="en hidden">AI Specialization Training – National Technology Academy (July 2024)</span></li>
-                    <li><span class="tr">Yapay Zeka Temel Eğitimi – Milli Teknoloji Akademisi (Ocak 2024)</span><span class="en hidden">AI Foundation Training – National Technology Academy (January 2024)</span></li>
-                    <li><span class="tr">Çeviri Teknolojileri Eğitimi (Eylül 2024)</span><span class="en hidden">Translation Technologies Training (September 2024)</span></li>
-                    <li>Deep Learning Foundation: Linear Regression and Statistics (<span class="tr">Kasım</span><span class="en hidden">November</span> 2023)</li>
-                    <li>Introduction to Deep Learning / <span class="tr">Derin Öğrenmeye Giriş</span><span class="en hidden">Introduction to Deep Learning</span> (<span class="tr">Mart</span><span class="en hidden">March</span> 2023)</li>
-                    <li>Introduction to Machine Learning / <span class="tr">Makine Öğrenmeye Giriş</span><span class="en hidden">Introduction to Machine Learning</span> (<span class="tr">Şubat</span><span class="en hidden">February</span> 2023)</li>
-                    <li>TİDYeS (<span class="tr">Eylül</span><span class="en hidden">September</span> 2019)</li>
-                    <li>2021 <span class="tr">Avrupa Televizyon ve Medya İşaret Dili Tercümanlığı</span><span class="en hidden">European Television and Media Sign Language Interpreting</span> – Maya De Wit (<span class="tr">Kasım</span><span class="en hidden">November</span> 2021)</li>
-                </ul>
-                
-                <h3><span class="tr">Ödüller</span><span class="en hidden">Awards</span></h3>
-                <ul>
-                    <li><span class="tr">Yapay Zeka Uzmanlık Programı (6000 başvuru arasından 500 kişi arasında seçildi) – Milli Teknoloji Akademisi, 2024</span><span class="en hidden">AI Specialization Program (selected among 500 from 6000 applicants) – National Technology Academy, 2024</span></li>
-                    <li><span class="tr">Engelsiz Bilişim Ödülü (Kodlama Eğitimi) – Anatolian Eternals Robotics (8863), 2022</span><span class="en hidden">Accessible IT Award (Coding Education) – Anatolian Eternals Robotics (8863), 2022</span></li>
-                    <li><span class="tr">Engelsiz Başarı Ödülü – Aile ve Sosyal Hizmetler Bakanlığı, 2019</span><span class="en hidden">Barrier-Free Success Award – Ministry of Family and Social Services, 2019</span></li>
-                </ul>
-                
-                <div class="back-to-top">
-                    <a href="#intro">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
-                </div>
-            </section>
-            
-            <section id="skills">
-                <h2><span class="tr">Beceriler</span><span class="en hidden">Skills</span></h2>
-                
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4><span class="tr">Yapay Zeka & Programlama</span><span class="en hidden">AI & Programming</span></h4>
-                        <ul>
-                            <li>Python</li>
-                            <li><span class="tr">Makine Öğrenmesi</span><span class="en hidden">Machine Learning</span></li>
-                            <li><span class="tr">Derin Öğrenme</span><span class="en hidden">Deep Learning</span></li>
-                            <li><span class="tr">İstatistiksel Analiz</span><span class="en hidden">Statistical Analysis</span></li>
-                            <li><span class="tr">Veri Analizi</span><span class="en hidden">Data Analysis</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4><span class="tr">İşaret Dili</span><span class="en hidden">Sign Language</span></h4>
-                        <ul>
-                            <li><span class="tr">Türk İşaret Dili (Ana Dil)</span><span class="en hidden">Turkish Sign Language (Native)</span></li>
-                            <li><span class="tr">İşaret Dili Tercümanlığı</span><span class="en hidden">Sign Language Interpreting</span></li>
-                            <li><span class="tr">Dilbilim</span><span class="en hidden">Linguistics</span></li>
-                            <li><span class="tr">Çeviribilim</span><span class="en hidden">Translation Studies</span></li>
-                            <li><span class="tr">Kinematik Analiz</span><span class="en hidden">Kinematic Analysis</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4><span class="tr">Teknik Beceriler</span><span class="en hidden">Technical Skills</span></h4>
-                        <ul>
-                            <li>AutoCAD</li>
-                            <li>ELAN 6,7</li>
-                            <li><span class="tr">Veri Görselleştirme</span><span class="en hidden">Data Visualization</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4><span class="tr">Diller</span><span class="en hidden">Languages</span></h4>
-                        <ul>
-                            <li><span class="tr">Türk İşaret Dili (Ana Dil)</span><span class="en hidden">Turkish Sign Language (Native)</span></li>
-                            <li><span class="tr">Türkçe</span><span class="en hidden">Turkish</span></li>
-                            <li><span class="tr">İngilizce</span><span class="en hidden">English</span></li>
-                            <li><span class="tr">Uluslararası İşaret Dili</span><span class="en hidden">International Sign Language</span></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="back-to-top">
-                    <a href="#intro">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
-                </div>
-            </section>
-            
-            <section id="volunteer">
-                <h2><span class="tr">Gönüllü Çalışmalar</span><span class="en hidden">Volunteer Work</span></h2>
-                
-                <div class="item">
-                    <div class="item-title">Mentör / Koç</div>
-                    <div class="item-subtitle">FRC – Anatolian Deaf Eternals Robotics (8863)</div>
-                    <div class="item-date"><span class="tr">Şubat 2022–devam ediyor</span><span class="en hidden">February 2022–present</span></div>
-                    <p><span class="tr">Sağır lise öğrencilerine robot tasarımı ve programlama eğitimi vermekteyim.</span><span class="en hidden">Providing robot design and programming education to Deaf high school students.</span></p>
-                </div>
-                
-                <div class="item">
-                    <div class="item-title"><span class="tr">Genel Sekreter</span><span class="en hidden">General Secretary</span></div>
-                    <div class="item-subtitle"><span class="tr">Ankara Anadolu Sağırlar Spor Kulübü</span><span class="en hidden">Ankara Anatolian Deaf Sports Club</span></div>
-                    <div class="item-date"><span class="tr">Ocak 2018–Kasım 2024</span><span class="en hidden">January 2018–November 2024</span></div>
-                </div>
-                
-                <div class="item">
-                    <div class="item-title"><span class="tr">Sağır Tercümanı</span><span class="en hidden">Sign Language Interpreter</span></div>
-                    <div class="item-subtitle"><span class="tr">Bütün Çocuklar Bizim Derneği</span><span class="en hidden">All Children Are Ours Association</span></div>
-                    <div class="item-date"><span class="tr">Şubat 2023–Mayıs 2023</span><span class="en hidden">February 2023–May 2023</span></div>
-                </div>
-                
-                <div class="item">
-                    <div class="item-title"><span class="tr">Sağır Tercümanı</span><span class="en hidden">Sign Language Interpreter</span></div>
-                    <div class="item-subtitle">23. DEAFLYMPICS 2017 SAMSUN / TRT</div>
-                    <div class="item-date"><span class="tr">Haziran 2017–Ağustos 2017</span><span class="en hidden">June 2017–August 2017</span></div>
-                </div>
-                
-                <div class="back-to-top">
-                    <a href="#intro">[<span class="tr">Başa dön</span><span class="en hidden">Back to top</span>]</a>
-                </div>
-            </section>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 Caner Doğan</p>
-        </footer>
-    </div>
-    
-    <a href="#intro" class="back-to-top-fixed" id="backToTopBtn">
-        <span class="tr">↑ Başa Dön</span>
-        <span class="en hidden">↑ Back to Top</span>
-    </a>
-    
-    <script>
-        let currentLang = 'en';
-        let darkMode = false;
-        
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').style.display = 'block';
-        }
-        
-        function closeMobileMenu(event) {
-            document.getElementById('mobileMenu').style.display = 'none';
-        }
-        
-        function copyEmail(e) {
-            e.preventDefault();
-            const email = 'doganc@metu.edu.tr';
-            navigator.clipboard.writeText(email).then(() => {
-                alert('Email copied: ' + email);
-            }).catch(() => {
-                // Fallback for older browsers
-                const textarea = document.createElement('textarea');
-                textarea.value = email;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                alert('Email copied: ' + email);
-            });
-        }
-        
-        function toggleLanguage() {
-            currentLang = currentLang === 'tr' ? 'en' : 'tr';
-            const langBtn = document.getElementById('lang-btn');
-            langBtn.textContent = currentLang === 'tr' ? 'EN' : 'TR';
-            
-            document.querySelectorAll('.tr').forEach(el => {
-                el.classList.toggle('hidden', currentLang !== 'tr');
-            });
-            
-            document.querySelectorAll('.en').forEach(el => {
-                el.classList.toggle('hidden', currentLang !== 'en');
-            });
-            
-            document.documentElement.lang = currentLang;
-        }
-        
-        function toggleDarkMode() {
-            darkMode = !darkMode;
-            document.body.classList.toggle('dark-mode', darkMode);
-            localStorage.setItem('darkMode', darkMode);
-        }
-        
-        // Load dark mode preference and set initial language
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-            if (savedDarkMode) {
-                darkMode = true;
-                document.body.classList.add('dark-mode');
-            }
-            
-            // Set initial language to English
-            document.getElementById('lang-btn').textContent = 'TR';
-            document.querySelectorAll('.tr').forEach(el => {
-                el.classList.add('hidden');
-            });
-            document.querySelectorAll('.en').forEach(el => {
-                el.classList.remove('hidden');
-            });
-            document.documentElement.lang = 'en';
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Show/hide back to top button
-        window.addEventListener('scroll', () => {
-            const backToTopBtn = document.getElementById('backToTopBtn');
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-    </script>
-</body>
-</html>
+                    <li>IMPRS <span class="tr">Konferansı</span><span class="en hidden">Conference</span> – <span class="tr">Dil Bilimlerinde Disiplinlerarası
