@@ -37,6 +37,11 @@
             transition: background 0.3s, color 0.3s;
         }
         
+        /* DİL DEĞİŞTİRME - EN ÖNEMLİ KISIM */
+        .lang-tr { display: none; }
+        body.turkish .lang-tr { display: inline; }
+        body.turkish .lang-en { display: none; }
+        
         .top-nav {
             background: var(--nav-bg);
             border-bottom: 1px solid var(--border-color);
@@ -44,7 +49,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            transition: background 0.3s;
         }
         
         .nav-container {
@@ -54,13 +58,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
         }
         
         .nav-links {
             display: flex;
             gap: 20px;
-            flex-wrap: wrap;
         }
         
         .nav-links a {
@@ -69,25 +71,9 @@
             font-size: 0.95em;
         }
         
-        .nav-links a:hover {
-            color: var(--link-color);
-        }
-        
-        .nav-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 2em;
-            cursor: pointer;
-            color: var(--text-color);
-            padding: 0;
-            line-height: 1;
-        }
-        
         .nav-controls {
             display: flex;
             gap: 15px;
-            align-items: center;
         }
         
         .lang-switch, .dark-mode-toggle {
@@ -100,8 +86,13 @@
             color: var(--text-color);
         }
         
-        .lang-switch:hover, .dark-mode-toggle:hover {
-            opacity: 0.8;
+        .nav-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: var(--text-color);
         }
         
         .nav-menu-mobile {
@@ -124,19 +115,6 @@
             height: 100%;
             background: var(--bg-color);
             padding: 20px;
-            overflow-y: auto;
-        }
-        
-        .nav-menu-content a {
-            display: block;
-            padding: 15px 10px;
-            color: var(--text-color);
-            text-decoration: none;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .nav-menu-content a:hover {
-            background: var(--nav-bg);
         }
         
         .nav-close {
@@ -147,7 +125,14 @@
             border: none;
             font-size: 2em;
             cursor: pointer;
+        }
+        
+        .nav-menu-content a {
+            display: block;
+            padding: 15px 10px;
             color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-color);
         }
         
         .container {
@@ -173,7 +158,6 @@
             width: 280px;
             height: auto;
             border-radius: 8px;
-            object-fit: cover;
             flex-shrink: 0;
         }
         
@@ -181,18 +165,16 @@
             font-size: 2.5em;
             font-weight: normal;
             margin-bottom: 20px;
-            color: var(--text-color);
         }
         
-        .profile-text .position {
+        .position {
             font-size: 1.3em;
             font-weight: 500;
-            color: var(--text-color);
             margin-top: 15px;
             margin-bottom: 5px;
         }
         
-        .profile-text .institution {
+        .institution {
             font-size: 1em;
             color: var(--secondary-text);
             margin-bottom: 15px;
@@ -207,17 +189,11 @@
         
         .email-contact {
             margin-top: 15px;
-            font-size: 1em;
-            color: var(--secondary-text);
         }
         
         .email-contact a {
             color: var(--link-color);
             text-decoration: none;
-        }
-        
-        .email-contact a:hover {
-            text-decoration: underline;
         }
         
         .contact-links {
@@ -231,19 +207,16 @@
             color: var(--text-color);
             background: var(--nav-bg);
             text-decoration: none;
-            font-size: 0.9em;
             padding: 10px 16px;
             border-radius: 6px;
             text-align: center;
-            transition: all 0.3s;
-            display: block;
             border: 1px solid var(--border-color);
+            transition: all 0.3s;
         }
         
         .contact-links a:hover {
             background: var(--border-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         .back-to-top-fixed {
@@ -252,19 +225,11 @@
             bottom: 30px;
             right: 30px;
             background: var(--nav-bg);
-            color: var(--text-color);
             padding: 12px 20px;
             border-radius: 6px;
             text-decoration: none;
             border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             z-index: 100;
-            transition: all 0.3s;
-        }
-        
-        .back-to-top-fixed:hover {
-            background: var(--border-color);
-            transform: translateY(-2px);
         }
         
         .back-to-top-fixed.show {
@@ -279,7 +244,6 @@
             font-size: 1.8em;
             font-weight: normal;
             margin-bottom: 20px;
-            color: var(--text-color);
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
         }
@@ -287,15 +251,8 @@
         h3 {
             font-size: 1.2em;
             font-weight: normal;
-            margin-bottom: 15px;
             margin-top: 25px;
-            color: var(--text-color);
-        }
-        
-        p, li {
-            font-size: 1em;
-            color: var(--secondary-text);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         ul {
@@ -322,13 +279,11 @@
         
         .item-title {
             font-weight: bold;
-            color: var(--text-color);
         }
         
         .item-subtitle {
             font-style: italic;
             color: var(--secondary-text);
-            font-size: 0.95em;
         }
         
         .item-date {
@@ -355,34 +310,6 @@
             font-weight: bold;
         }
         
-        footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            font-size: 0.9em;
-            color: var(--border-color);
-        }
-        
-        a {
-            color: var(--link-color);
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        .back-to-top {
-            text-align: right;
-            margin-top: 20px;
-        }
-        
-        .back-to-top a {
-            color: var(--border-color);
-            text-decoration: none;
-            font-size: 0.9em;
-        }
-        
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -398,68 +325,63 @@
         
         .skill-category h4 {
             margin-bottom: 10px;
-            color: var(--text-color);
             font-weight: normal;
         }
         
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--border-color);
+        }
+        
+        a {
+            color: var(--link-color);
+        }
+        
+        .back-to-top {
+            text-align: right;
+            margin-top: 20px;
+        }
+        
+        .back-to-top a {
+            color: var(--border-color);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        
         @media (max-width: 768px) {
-            .container, .nav-container {
-                padding: 40px 20px;
-            }
-            
             .nav-links {
                 display: none;
             }
-            
             .nav-menu-toggle {
                 display: block;
             }
-            
-            .nav-container {
-                justify-content: space-between;
-            }
-            
             .profile-section {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-            
             .profile-img {
                 width: 100%;
                 max-width: 400px;
             }
-            
-            .profile-text h1 {
-                font-size: 2em;
-            }
-            
-            .contact-links {
-                justify-content: center;
-            }
-        }
-        
-        [lang="en"] .tr {
-            display: none;
-        }
-        
-        [lang="tr"] .en {
-            display: none;
         }
     </style>
 </head>
 <body>
-    <nav class="top-nav">
+        <nav class="top-nav">
         <div class="nav-container">
             <button class="nav-menu-toggle" onclick="toggleMobileMenu()">☰</button>
             <div class="nav-links">
-                <a href="#intro"><span class="tr">Ana Sayfa</span><span class="en">Home</span></a>
-                <a href="#background"><span class="tr">Eğitim</span><span class="en">Education</span></a>
-                <a href="#positions"><span class="tr">İş Deneyimi</span><span class="en">Experience</span></a>
-                <a href="#publications"><span class="tr">Yayınlar</span><span class="en">Publications</span></a>
-                <a href="#conferences"><span class="tr">Sunumlar</span><span class="en">Presentations</span></a>
-                <a href="#certificates"><span class="tr">Sertifikalar</span><span class="en">Certificates</span></a>
-                <a href="#skills"><span class="tr">Beceriler</span><span class="en">Skills</span></a>
+                <a href="#intro"><span class="lang-tr">Ana Sayfa</span><span class="lang-en">Home</span></a>
+                <a href="#background"><span class="lang-tr">Eğitim</span><span class="lang-en">Education</span></a>
+                <a href="#positions"><span class="lang-tr">İş Deneyimi</span><span class="lang-en">Experience</span></a>
+                <a href="#publications"><span class="lang-tr">Yayınlar</span><span class="lang-en">Publications</span></a>
+                <a href="#conferences"><span class="lang-tr">Sunumlar</span><span class="lang-en">Presentations</span></a>
+                <a href="#certificates"><span class="lang-tr">Sertifikalar</span><span class="lang-en">Certificates</span></a>
+                <a href="#skills"><span class="lang-tr">Beceriler</span><span class="lang-en">Skills</span></a>
             </div>
             <div class="nav-controls">
                 <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
@@ -470,16 +392,16 @@
         </div>
     </nav>
     
-    <div class="nav-menu-mobile" id="mobileMenu" onclick="closeMobileMenu(event)">
+    <div class="nav-menu-mobile" id="mobileMenu" onclick="closeMobileMenu()">
         <div class="nav-menu-content" onclick="event.stopPropagation()">
             <button class="nav-close" onclick="closeMobileMenu()">×</button>
-            <a href="#intro" onclick="closeMobileMenu()"><span class="tr">Ana Sayfa</span><span class="en">Home</span></a>
-            <a href="#background" onclick="closeMobileMenu()"><span class="tr">Eğitim</span><span class="en">Education</span></a>
-            <a href="#positions" onclick="closeMobileMenu()"><span class="tr">İş Deneyimi</span><span class="en">Experience</span></a>
-            <a href="#publications" onclick="closeMobileMenu()"><span class="tr">Yayınlar</span><span class="en">Publications</span></a>
-            <a href="#conferences" onclick="closeMobileMenu()"><span class="tr">Sunumlar</span><span class="en">Presentations</span></a>
-            <a href="#certificates" onclick="closeMobileMenu()"><span class="tr">Sertifikalar</span><span class="en">Certificates</span></a>
-            <a href="#skills" onclick="closeMobileMenu()"><span class="tr">Beceriler</span><span class="en">Skills</span></a>
+            <a href="#intro" onclick="closeMobileMenu()"><span class="lang-tr">Ana Sayfa</span><span class="lang-en">Home</span></a>
+            <a href="#background" onclick="closeMobileMenu()"><span class="lang-tr">Eğitim</span><span class="lang-en">Education</span></a>
+            <a href="#positions" onclick="closeMobileMenu()"><span class="lang-tr">İş Deneyimi</span><span class="lang-en">Experience</span></a>
+            <a href="#publications" onclick="closeMobileMenu()"><span class="lang-tr">Yayınlar</span><span class="lang-en">Publications</span></a>
+            <a href="#conferences" onclick="closeMobileMenu()"><span class="lang-tr">Sunumlar</span><span class="lang-en">Presentations</span></a>
+            <a href="#certificates" onclick="closeMobileMenu()"><span class="lang-tr">Sertifikalar</span><span class="lang-en">Certificates</span></a>
+            <a href="#skills" onclick="closeMobileMenu()"><span class="lang-tr">Beceriler</span><span class="lang-en">Skills</span></a>
         </div>
     </div>
     
@@ -491,26 +413,26 @@
                     <h1>Caner Doğan</h1>
                     
                     <div class="position">
-                        <span class="tr">Sağır Araştırmacı</span>
-                        <span class="en">Deaf Researcher</span>
+                        <span class="lang-tr">Sağır Araştırmacı</span>
+                        <span class="lang-en">Deaf Researcher</span>
                     </div>
                     <div class="institution">
-                        <span class="tr"><a href="https://www.metu.edu.tr" target="_blank">Orta Doğu Teknik Üniversitesi (ODTÜ)</a>, Ankara, Türkiye</span>
-                        <span class="en"><a href="https://www.metu.edu.tr" target="_blank">Middle East Technical University (METU)</a>, Ankara, Turkey</span>
+                        <span class="lang-tr"><a href="https://www.metu.edu.tr" target="_blank">Orta Doğu Teknik Üniversitesi (ODTÜ)</a>, Ankara, Türkiye</span>
+                        <span class="lang-en"><a href="https://www.metu.edu.tr" target="_blank">Middle East Technical University (METU)</a>, Ankara, Turkey</span>
                     </div>
                     
                     <div class="position">
-                        <span class="tr">Başmühendis</span>
-                        <span class="en">Chief Engineer</span>
+                        <span class="lang-tr">Başmühendis</span>
+                        <span class="lang-en">Chief Engineer</span>
                     </div>
                     <div class="institution">
-                        <span class="tr"><a href="https://www.trt.net.tr" target="_blank">TRT Genel Müdürlüğü (TRT)</a>, Ankara, Türkiye</span>
-                        <span class="en"><a href="https://www.trt.net.tr" target="_blank">Turkish Radio and Television Corporation (TRT)</a>, Ankara, Turkey</span>
+                        <span class="lang-tr"><a href="https://www.trt.net.tr" target="_blank">TRT Genel Müdürlüğü (TRT)</a>, Ankara, Türkiye</span>
+                        <span class="lang-en"><a href="https://www.trt.net.tr" target="_blank">Turkish Radio and Television Corporation (TRT)</a>, Ankara, Turkey</span>
                     </div>
                     
                     <p>
-                        <span class="tr">Ana dilim <strong>Türk İşaret Dili (TİD)</strong>'dir. Yapay zekâ ve derin öğrenme yöntemlerini kullanarak işaret dili tanıma sistemleri, işaret dili teknolojisi, dilbilimsel ve kinematik analizler ile Sağır çalışmaları alanlarında araştırmalar yapıyorum.</span>
-                        <span class="en">My native language is <strong>Turkish Sign Language (TİD)</strong>. I conduct research in sign language recognition systems, sign language technology, linguistic and kinematic analyses, and Deaf studies using artificial intelligence and deep learning methods.</span>
+                        <span class="lang-tr">Ana dilim <strong>Türk İşaret Dili (TİD)</strong>'dir. Yapay zekâ ve derin öğrenme yöntemlerini kullanarak işaret dili tanıma sistemleri, işaret dili teknolojisi, dilbilimsel ve kinematik analizler ile Sağır çalışmaları alanlarında araştırmalar yapıyorum.</span>
+                        <span class="lang-en">My native language is <strong>Turkish Sign Language (TİD)</strong>. I conduct research in sign language recognition systems, sign language technology, linguistic and kinematic analyses, and Deaf studies using artificial intelligence and deep learning methods.</span>
                     </p>
                     
                     <p class="email-contact">
@@ -533,110 +455,99 @@
         
         <main>
             <section id="background">
-                <h2><span class="tr">Eğitim</span><span class="en">Education</span></h2>
+                <h2><span class="lang-tr">Eğitim</span><span class="lang-en">Education</span></h2>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Yüksek Lisans - İstatistik (Yapay Zeka)</span><span class="en">Master's - Statistics (Artificial Intelligence)</span></div>
+                    <div class="item-title"><span class="lang-tr">Yüksek Lisans - İstatistik (Yapay Zeka)</span><span class="lang-en">Master's - Statistics (Artificial Intelligence)</span></div>
                     <div class="item-subtitle">Ankara Üniversitesi / Ankara University</div>
                     <div class="item-date">2021–2024</div>
-                    <p><span class="tr">Tez: "İşaret Dili Tanıma İçin Derin Öğrenme ile İstatistiksel Yöntemlerin Karşılaştırılması"</span><span class="en">Thesis: "Comparison of Deep Learning and Statistical Methods for Sign Language Recognition"</span></p>
+                    <p><span class="lang-tr">Tez: "İşaret Dili Tanıma İçin Derin Öğrenme ile İstatistiksel Yöntemlerin Karşılaştırılması"</span><span class="lang-en">Thesis: "Comparison of Deep Learning and Statistical Methods for Sign Language Recognition"</span></p>
                 </div>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Yüksek Lisans - Türk İşaret Dili Tercümanlığı</span><span class="en">Master's - Turkish Sign Language Interpreting</span></div>
+                    <div class="item-title"><span class="lang-tr">Yüksek Lisans - Türk İşaret Dili Tercümanlığı</span><span class="lang-en">Master's - Turkish Sign Language Interpreting</span></div>
                     <div class="item-subtitle">Ankara Üniversitesi / Ankara University</div>
                     <div class="item-date">2019–2020</div>
-                    <p><span class="tr">Proje: "Televizyon Haber Bültenlerinde İşaret Dili Çeviri Hizmetine Yönelik Sağır Topluluğun Tutum ve Beklentileri"</span><span class="en">Project: "Attitudes and Expectations of the Deaf Community Regarding Sign Language Interpretation in TV News"</span></p>
+                    <p><span class="lang-tr">Proje: "Televizyon Haber Bültenlerinde İşaret Dili Çeviri Hizmetine Yönelik Sağır Topluluğun Tutum ve Beklentileri"</span><span class="lang-en">Project: "Attitudes and Expectations of the Deaf Community Regarding Sign Language Interpretation in TV News"</span></p>
                 </div>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Lisans - Makine Mühendisliği</span><span class="en">Bachelor's - Mechanical Engineering</span></div>
+                    <div class="item-title"><span class="lang-tr">Lisans - Makine Mühendisliği</span><span class="lang-en">Bachelor's - Mechanical Engineering</span></div>
                     <div class="item-subtitle">Eskişehir Osmangazi Üniversitesi / Eskisehir Osmangazi University</div>
                     <div class="item-date">2005–2009</div>
                 </div>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Ön Lisans - İletişim ve Medya Çalışmaları</span><span class="en">Associate Degree - Communication and Media Studies</span></div>
+                    <div class="item-title"><span class="lang-tr">Ön Lisans - İletişim ve Medya Çalışmaları</span><span class="lang-en">Associate Degree - Communication and Media Studies</span></div>
                     <div class="item-subtitle">Anadolu Üniversitesi / Anadolu University</div>
                     <div class="item-date">2018–2020</div>
                 </div>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Ön Lisans - Radyo ve Televizyon Programcılığı</span><span class="en">Associate Degree - Radio and Television Programming</span></div>
+                    <div class="item-title"><span class="lang-tr">Ön Lisans - Radyo ve Televizyon Programcılığı</span><span class="lang-en">Associate Degree - Radio and Television Programming</span></div>
                     <div class="item-subtitle">Anadolu Üniversitesi / Anadolu University</div>
                     <div class="item-date">2015–2017</div>
                 </div>
                 
                 <div class="back-to-top">
-                    <a href="#intro">[<span class="tr">Başa dön</span><span class="en">Back to top</span>]</a>
+                    <a href="#intro">[<span class="lang-tr">Başa dön</span><span class="lang-en">Back to top</span>]</a>
                 </div>
             </section>
             
             <section id="positions">
-                <h2><span class="tr">İş Deneyimi</span><span class="en">Experience</span></h2>
+                <h2><span class="lang-tr">İş Deneyimi</span><span class="lang-en">Experience</span></h2>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Araştırmacı</span><span class="en">Researcher</span></div>
+                    <div class="item-title"><span class="lang-tr">Araştırmacı</span><span class="lang-en">Researcher</span></div>
                     <div class="item-subtitle">
-                        <span class="tr">Orta Doğu Teknik Üniversitesi (ODTÜ)</span>
-                        <span class="en">Middle East Technical University (METU)</span>
+                        <span class="lang-tr">Orta Doğu Teknik Üniversitesi (ODTÜ)</span>
+                        <span class="lang-en">Middle East Technical University (METU)</span>
                     </div>
-                    <div class="item-date"><span class="tr">Nisan 2025–devam ediyor</span><span class="en">April 2025–present</span></div>
-                    <p><span class="tr">TİD-LEX (Türk İşaret Dili Sözcük Veritabanı) projesinde görev almaktayım. İşaret dili kinematik analizi, dilbilimsel analizi ve yapay zeka kullanarak işaret dili tanıma sistemleri üzerine çalışmaktayım.</span><span class="en">Working on the TİD-LEX (Turkish Sign Language Lexical Database) project. Conducting research on sign language kinematic analysis, linguistic analysis, and AI-based sign language recognition systems.</span></p>
+                    <div class="item-date"><span class="lang-tr">Nisan 2025–devam ediyor</span><span class="lang-en">April 2025–present</span></div>
+                    <p><span class="lang-tr">TİD-LEX (Türk İşaret Dili Sözcük Veritabanı) projesinde görev almaktayım. İşaret dili kinematik analizi, dilbilimsel analizi ve yapay zeka kullanarak işaret dili tanıma sistemleri üzerine çalışmaktayım.</span><span class="lang-en">Working on the TİD-LEX (Turkish Sign Language Lexical Database) project. Conducting research on sign language kinematic analysis, linguistic analysis, and AI-based sign language recognition systems.</span></p>
                 </div>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Başmühendis</span><span class="en">Chief Engineer</span></div>
+                    <div class="item-title"><span class="lang-tr">Başmühendis</span><span class="lang-en">Chief Engineer</span></div>
                     <div class="item-subtitle">
-                        <span class="tr">TRT Genel Müdürlüğü</span>
-                        <span class="en">Turkish Radio and Television Corporation</span>
+                        <span class="lang-tr">TRT Genel Müdürlüğü</span>
+                        <span class="lang-en">Turkish Radio and Television Corporation</span>
                     </div>
-                    <div class="item-date"><span class="tr">Eylül 2012–devam ediyor</span><span class="en">September 2012–present</span></div>
-                    <p><span class="tr">Teknik operasyonlar ve yayıncılık sistemleri yönetimi. Engelsiz medya erişimi projelerinde aktif rol.</span><span class="en">Technical operations and broadcasting systems management. Active role in accessible media projects.</span></p>
+                    <div class="item-date"><span class="lang-tr">Eylül 2012–devam ediyor</span><span class="lang-en">September 2012–present</span></div>
+                    <p><span class="lang-tr">Teknik operasyonlar ve yayıncılık sistemleri yönetimi. Engelsiz medya erişimi projelerinde aktif rol.</span><span class="lang-en">Technical operations and broadcasting systems management. Active role in accessible media projects.</span></p>
                 </div>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Kontrol Mühendisi</span><span class="en">Control Engineer</span></div>
+                    <div class="item-title"><span class="lang-tr">Kontrol Mühendisi</span><span class="lang-en">Control Engineer</span></div>
                     <div class="item-subtitle">Başkentgaz</div>
-                    <div class="item-date"><span class="tr">Aralık 2010–Eylül 2012</span><span class="en">December 2010–September 2012</span></div>
+                    <div class="item-date"><span class="lang-tr">Aralık 2010–Eylül 2012</span><span class="lang-en">December 2010–September 2012</span></div>
                 </div>
                 
                 <div class="item">
-                    <div class="item-title"><span class="tr">Proje Mühendisi</span><span class="en">Project Engineer</span></div>
+                    <div class="item-title"><span class="lang-tr">Proje Mühendisi</span><span class="lang-en">Project Engineer</span></div>
                     <div class="item-subtitle">Gama Holding</div>
-                    <div class="item-date"><span class="tr">Eylül 2009–Aralık 2010</span><span class="en">September 2009–December 2010</span></div>
+                    <div class="item-date"><span class="lang-tr">Eylül 2009–Aralık 2010</span><span class="lang-en">September 2009–December 2010</span></div>
                 </div>
                 
                 <div class="back-to-top">
-                    <a href="#intro">[<span class="tr">Başa dön</span><span class="en">Back to top</span>]</a>
+                    <a href="#intro">[<span class="lang-tr">Başa dön</span><span class="lang-en">Back to top</span>]</a>
                 </div>
             </section>
             
             <section id="publications">
-                <h2><span class="tr">Yayınlar</span><span class="en">Publications</span></h2>
+                <h2><span class="lang-tr">Yayınlar</span><span class="lang-en">Publications</span></h2>
                 
                 <div class="pub-list">
                     <div class="pub-item">
-                        Doğan, C. (2024). <em><span class="tr">İşaret dili tanımada derin öğrenme ile istatistiksel yöntemlerin karşılaştırılması</span><span class="en">Comparison of deep learning and statistical methods in sign language recognition</span></em> [<span class="tr">Yüksek lisans tezi</span><span class="en">MA thesis</span>, <span class="tr">Ankara Üniversitesi</span><span class="en">Ankara University</span>]. <a href="https://tez.yok.gov.tr" target="_blank">Ulusal Tez Merkezi</a>.
+                        Doğan, C. (2024). <em><span class="lang-tr">İşaret dili tanımada derin öğrenme ile istatistiksel yöntemlerin karşılaştırılması</span><span class="lang-en">Comparison of deep learning and statistical methods in sign language recognition</span></em> [<span class="lang-tr">Yüksek lisans tezi</span><span class="lang-en">MA thesis</span>, <span class="lang-tr">Ankara Üniversitesi</span><span class="lang-en">Ankara University</span>]. <a href="https://tez.yok.gov.tr" target="_blank">Ulusal Tez Merkezi</a>.
                     </div>
                     
                     <div class="pub-item">
-                        Doğan, C. (2021). <span class="tr">Televizyon Haber Bültenlerindeki İşaret Dili Çeviri Hizmetine Yönelik Sağır Topluluğun Tutum Ve Beklentileri.</span><span class="en">Attitudes and Expectations of the Deaf Community Regarding Sign Language Interpretation Services in Television News Bulletins.</span> <em>Çeviribilim ve Uygulamaları Dergisi</em>, 2021(30), 18-60.
+                        Doğan, C. (2021). <span class="lang-tr">Televizyon Haber Bültenlerindeki İşaret Dili Çeviri Hizmetine Yönelik Sağır Topluluğun Tutum Ve Beklentileri.</span><span class="lang-en">Attitudes and Expectations of the Deaf Community Regarding Sign Language Interpretation Services in Television News Bulletins.</span> <em>Çeviribilim ve Uygulamaları Dergisi</em>, 2021(30), 18-60.
                     </div>
                 </div>
                 
                 <div class="back-to-top">
-                    <a href="#intro">[<span class="tr">Başa dön</span><span class="en">Back to top</span>]</a>
+                    <a href="#intro">[<span class="lang-tr">Başa dön</span><span class="lang-en">Back to top</span>]</a>
                 </div>
             </section>
-            
-            <section id="conferences">
-                <h2><span class="tr">Konferanslar & Sunumlar</span><span class="en">Conferences & Presentations</span></h2>
-                
-                <h3>2025</h3>
-                <ul>
-                    <li>SLTAT 2025 – Sign Language Technology and Applications Conference, Berlin, <span class="tr">Almanya</span><span class="en">Germany</span> (<span class="tr">Eylül</span><span class="en">September</span>)</li>
-                    <li>ISGS 10 – International Society for Gesture Studies, Nijmegen, <span class="tr">Hollanda</span><span class="en">Netherlands</span> (<span class="tr">Temmuz</span><span class="en">July</span>)</li>
-                    <li>CVPR 2025 – <span class="tr">İşaret Dili Teknolojileri Çalıştayı</span><span class="en">Sign Language Technologies Workshop</span>, Nashville, USA (<span class="tr">Haziran</span><span class="en">June</span>)</li>
-                    <li>AT4SSL 2025 – <span class="tr">İşaret ve Konuşma Dilleri için Otomatik Çeviri Çalıştayı</span><span class="en">Automatic Translation for Sign and Spoken Languages Workshop</span>, Geneva, <span class="tr">İsviçre</span><span class="en">Switzerland</span> (<span class="tr">Haziran</span><span class="en">June</span>)</li>
-                    <li>Dr. Deaf <span class="tr">Yazma Kampı</span><span class="en">Writing Camp</span>, Al, <span class="tr">Norveç</span><span class="en">Norway</span>
