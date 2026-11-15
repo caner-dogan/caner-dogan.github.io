@@ -1070,9 +1070,8 @@
         }
 
         (function init() {
-            const savedLang = safeGet('lang');
-            const browserTr = (navigator.language || '').toLowerCase().startsWith('tr');
-            applyLanguage(savedLang || (browserTr ? 'tr' : 'en'));
+            // Varsayılan dil İngilizce; ziyaretçi TR seçerse hatırlanır
+            applyLanguage(safeGet('lang') === 'tr' ? 'tr' : 'en');
             const savedDark = safeGet('darkMode');
             const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
             applyDarkMode(savedDark !== null ? savedDark === 'true' : prefersDark);
