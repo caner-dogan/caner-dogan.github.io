@@ -476,6 +476,22 @@
         .tl-title { font-size: 1.05em; font-weight: 600; line-height: 1.4; }
         .tl-org { color: var(--muted); font-size: 0.95em; }
         .tl-item p { margin-top: 8px; font-size: 0.95em; max-width: 680px; }
+        .tl-list {
+            list-style: none;
+            margin-top: 8px;
+            columns: 2;
+            column-gap: 32px;
+            max-width: 700px;
+            font-size: 0.93em;
+        }
+        .tl-list li { position: relative; padding-left: 16px; margin-bottom: 4px; break-inside: avoid; }
+        .tl-list li::before {
+            content: "";
+            position: absolute; left: 0; top: 11px;
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--accent);
+        }
+        @media (max-width: 720px) { .tl-list { columns: 1; } }
 
         /* ---------- Ödüller ---------- */
         .awards {
@@ -661,7 +677,7 @@
                     <article class="research-card">
                         <div class="research-icon"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <ellipse cx="12" cy="5" rx="9" ry="3" /> <path d="M3 5V19A9 3 0 0 0 21 19V5" /> <path d="M3 12A9 3 0 0 0 21 12" /> </svg></div>
                         <h3><span class="lang-tr">TİD-LEX: Türk İşaret Dili Sözcük Veritabanı</span><span class="lang-en">TİD-LEX: Turkish Sign Language Lexical Database</span></h3>
-                        <p><span class="lang-tr">ODTÜ'de yürütülen sözcük veritabanı projesi. 964 yerleşik TİD işaretinin fonolojik annotasyonu üzerinde çalışıyorum.</span><span class="lang-en">A lexical database project at METU. I work on the phonological annotation of 964 conventional TİD signs.</span></p>
+                        <p><span class="lang-tr">ODTÜ'de yürütülen, 964 yerleşik TİD işaretini kapsayan sözcük veritabanı projesi. Veri toplamadan fonolojik kodlamaya, istatistiksel analizden kinematik analiz araçlarına kadar projenin birçok aşamasında çalışıyorum.</span><span class="lang-en">A lexical database project at METU covering 964 conventional TİD signs. I work across the project — from data collection and phonological coding to statistical analysis and kinematic analysis tools.</span></p>
                     </article>
                     <article class="research-card">
                         <div class="research-icon"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" /> </svg></div>
@@ -813,7 +829,16 @@
                         <div class="tl-date"><span class="lang-tr">Nisan 2025 – devam ediyor</span><span class="lang-en">April 2025 – present</span></div>
                         <div class="tl-title"><span class="lang-tr">Araştırmacı</span><span class="lang-en">Researcher</span></div>
                         <div class="tl-org"><span class="lang-tr">Orta Doğu Teknik Üniversitesi (ODTÜ), MLCD Lab</span><span class="lang-en">Middle East Technical University (METU), MLCD Lab</span></div>
-                        <p><span class="lang-tr">TİD-LEX projesi: 964 yerleşik TİD işaretinin fonolojik annotasyonu ve poz kestirimi (pose estimation) ile kinematik analiz.</span><span class="lang-en">TİD-LEX project: phonological annotation of 964 conventional TİD signs and kinematic analysis using pose estimation.</span></p>
+                        <p><span class="lang-tr">TİD-LEX projesi (964 yerleşik TİD işareti). Görevlerim:</span><span class="lang-en">TİD-LEX project (964 conventional TİD signs). My responsibilities:</span></p>
+                        <ul class="tl-list">
+                            <li><span class="lang-tr">Veri toplama</span><span class="lang-en">Data collection</span></li>
+                            <li><span class="lang-tr">Fonolojik analiz ve kodlama</span><span class="lang-en">Phonological analysis and coding</span></li>
+                            <li><span class="lang-tr">Fonolojik kodlama doğrulaması</span><span class="lang-en">Validation of phonological coding</span></li>
+                            <li><span class="lang-tr">İstatistiksel analizler</span><span class="lang-en">Statistical analyses</span></li>
+                            <li><span class="lang-tr">Veri işleme ve analiz araçları</span><span class="lang-en">Data processing and analysis tools</span></li>
+                            <li><span class="lang-tr">Poz kestirimi (pose estimation) ile kinematik analiz araçları</span><span class="lang-en">Kinematic analysis tools using pose estimation</span></li>
+                            <li><span class="lang-tr">Projenin teknik çalışmaları</span><span class="lang-en">Technical development of the project</span></li>
+                        </ul>
                     </li>
                     <li class="tl-item current">
                         <div class="tl-date"><span class="lang-tr">Eylül 2012 – devam ediyor</span><span class="lang-en">September 2012 – present</span></div>
